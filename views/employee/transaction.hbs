@@ -1,0 +1,44 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New</a> Transaction</h3>
+{{!-- <table class="table table-striped"> --}}
+<form action="/employee/transaction" method="POST" autocomplete="off">
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">From</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="fromName">
+            <table>
+                <tbody>
+                    {{!-- <option><tr><td>From</td></tr></option> --}}
+                    {{#each list}}
+                    <option>
+                        <tr>
+                            <td>{{this.fullName}}</td>
+                        </tr>
+                    </option>
+                    {{/each}}
+                </tbody>
+            </table>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">To</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="toName">
+            <table>
+                <tbody>
+                    {{!-- <option><tr><td>To</td></tr></option> --}}
+                    {{#each list}}
+                    <option>
+                        <tr>
+                            <td>{{this.fullName}}</td>
+                        </tr>
+                    </option>
+                    {{/each}}
+                </tbody>
+            </table>
+        </select>
+    </div>
+    <tbody>
+        <label for="exampleFormControlSelect1">Amount</label>
+        <input class="form-control" type="text" name="amount" placeholder="Amount to be transffered"> <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        </div>
+</form>
